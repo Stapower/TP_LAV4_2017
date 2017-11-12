@@ -1,0 +1,139 @@
+body{
+    
+    background: #8d7100;
+    font-family: 'Josefin Sans', sans-serif;
+    
+    }
+    
+    #contenedor{
+    
+      background: #ffcc00;
+      width:850px;
+      margin: 0 auto;
+      box-shadow: 2px 0px 10px #6d5700;
+      border-radius: 10px;
+    
+    }
+    
+    #inicial, #juego{
+    
+      padding-bottom:10px;
+    
+    }
+    
+    #inicial img{
+    
+      margin:0 auto;
+    
+    }
+    
+    #resultado{
+    
+      display: none;
+    
+    }
+    
+    #juego{
+    
+      display: none;
+    
+    }
+    
+    
+    #juego div{
+    
+      display: inline;
+      padding:15px;
+    
+    }
+    
+    #juego input{
+    
+    padding:3px;
+    
+    }
+    
+    #juego input:hover{
+    
+      background:#ffd93f;
+      cursor: pointer;
+      border-radius:8px;
+    }
+    
+    
+    h1{
+    
+      background: #000;
+      color:#fff;
+      text-align: center;
+      padding:30px;
+      border-radius: 10px 10px 0 0;
+      font-weight: 700;
+    
+    }
+    
+    h2{
+    
+      background: #fff;
+      color:#443700;
+      text-align: center;
+      padding:30px;
+      font-weight: 700;
+    
+    }
+    
+    h2 img{
+    
+     margin: 0 auto;
+    
+    }
+    
+    #inicial h2:hover{
+    
+      font-style: italic;
+      cursor: pointer;
+    
+    }
+    
+    h3{
+    
+      color:#000;
+      text-align: center;
+      padding:10px;
+      font-weight: 700;
+      cursor: pointer; 
+    
+    }
+    
+    p{
+    
+      font-size: 2em;
+      text-align: center;
+      padding:20px 0 20px 0;
+      color:#8d7100;
+    
+    }
+    
+    span{
+    
+      color:#000;
+    
+    }
+    
+    a{
+    
+      text-decoration: none;
+      border: 3px dotted #8d7100;
+      border-bottom: none;
+      color:#ffcc00;
+      text-align: center;
+      padding:10px;
+      font-weight: 700;
+      display: block;
+      width:200px;
+      margin: 0 auto;
+      background: #8d7100;
+      cursor: pointer;
+    
+    }
+    

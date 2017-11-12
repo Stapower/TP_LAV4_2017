@@ -20,32 +20,30 @@ export class AgilidadAritmeticaComponent implements OnInit {
   }
    constructor() {
      this.ocultarVerificar=true;
-     this.Tiempo=5; 
+     this.Tiempo=23; 
     this.nuevoJuego = new JuegoAgilidad();
     console.info("Inicio agilidad");  
   }
   NuevoJuego() {
-    this.ocultarVerificar=false;
+   this.ocultarVerificar=false;
+   this.nuevoJuego.generarAgilidad();
+   
    this.repetidor = setInterval(()=>{ 
-      
       this.Tiempo--;
       console.log("llego", this.Tiempo);
       if(this.Tiempo==0 ) {
         clearInterval(this.repetidor);
         this.verificar();
         this.ocultarVerificar=true;
-        this.Tiempo=5;
+        this.Tiempo=23;
       }
       }, 900);
 
   }
   verificar()
   {
-    this.ocultarVerificar=false;
+    this.ocultarVerificar=true;
     clearInterval(this.repetidor);
-   
-
-   
+    this.nuevoJuego.verificar();
   }  
-
 }

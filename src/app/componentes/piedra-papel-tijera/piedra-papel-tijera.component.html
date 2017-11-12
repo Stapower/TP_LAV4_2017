@@ -1,0 +1,36 @@
+<head>
+  <link href='https://fonts.googleapis.com/css?family=Josefin+Sans:700' rel='stylesheet' type='text/css'>
+  <title>¡Piedra, Papel, Tijeras, Lagarto, Spock!</title>
+</head>
+<div Id="contenedor">
+    <div id="inicial">
+      <h1>¡Piedra, Papel, Tijeras, Lagarto, Spock!</h1>
+      <h2 (click)="mostrar()">Clic aquí para jugar</h2>
+      <img src="http://i58.tinypic.com/w9wayx.png"/>
+    </div>
+
+    <div id="juego">
+      <h1>¡Elije jugada...!</h1>	
+        <div>
+          <input type="image" (click)="jugar('Piedra')" src="http://i61.tinypic.com/2urxzsh.png"/> 
+        </div>
+        <div>
+          <input type="image" (click)="jugar('Papel')" src="http://i58.tinypic.com/abilgp.png"/> 
+        </div>
+        <div>
+          <input type="image" (click)="jugar('Tijeras')" src="http://i58.tinypic.com/20f722u.png"/> 
+        </div>
+        <div>
+          <input type="image" (click)="jugar('Lagarto')" src="http://i58.tinypic.com/119cvhs.png"/> 
+        </div>
+        <div>
+          <input type="image" (click)="jugar('Spock')" src="http://i57.tinypic.com/34ozm00.png"/> 
+        </div>
+        <h2>Sheldon Cooper está eligiendo...</h2>   
+    </div>
+  <div id="resultado"></div>	
+  <div id=JugarNuevamente >
+      <h3 (click)="volver()">Jugar </h3>
+      <h3 (click)="instrucciones()"> instrucciones </h3>
+  </div>
+</div>		
