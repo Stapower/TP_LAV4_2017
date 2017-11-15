@@ -1,0 +1,37 @@
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Juego de Memoria</title>
+	</head>
+
+	<body>
+	<section class=ejemplo>
+		<div class=controles>
+			<div class=boton>
+				<a id='iniciar' class=init>Iniciar</a>
+			</div>
+			<div class=crono>
+				0:<span>30</span>
+			</div>
+			<div class=boton>
+				<a id='reiniciar' class=reinit>Reiniciar</a>
+			</div>
+		</div>
+		<div class=memoria>
+      <div class="card" *ngFor = "let carta of juego.coordenadasDisponibles"  (click) = "meSelecciono(carta)">
+          <article class=unoUno> 
+            <img *ngIf="carta.mostrar" src={{carta.ruta+carta.imagen}} height="160" width="150" >  
+          </article>  
+      </div>
+		</div>
+		<div class='retro msn'>
+			<p>
+			</p>
+		</div>
+		<div class=retro id='final'>
+         <p>
+         </p>
+      </div>
+	</section>
+	</body>
+</html>
