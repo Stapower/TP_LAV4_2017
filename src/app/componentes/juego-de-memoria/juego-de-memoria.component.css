@@ -49,3 +49,11 @@
     .container {
         padding: 2px 16px;
     }
+
+    .boton.perder{
+        background: red;
+    }
+
+    .boton.ganar{
+        background: blue;
+    }

@@ -1,5 +1,7 @@
 import { Component, OnInit ,Input,Output,EventEmitter} from '@angular/core';
 import { JuegoAnagrama } from '../../clases/juego-anagrama'
+import {JuegoServiceService} from "../../servicios/juego-service.service";
+
 
 @Component({
   selector: 'app-anagrama',
@@ -10,7 +12,7 @@ export class AnagramaComponent implements OnInit {
   nuevoJuego : JuegoAnagrama;
   Mensajes;
 
-  constructor() {
+  constructor(public jws:JuegoServiceService) {
     this.nuevoJuego = new JuegoAnagrama();
     this.nuevoJuego.generarPalabra();
     this.nuevoJuego.palabraIngresada = "";
@@ -20,6 +22,7 @@ export class AnagramaComponent implements OnInit {
      this.nuevoJuego.verificar();
      if(this.nuevoJuego.gano){
       this.MostarMensaje("Tenemos un ganador! :)", this.nuevoJuego.gano);
+      this.jws.guardar(10, 'anagrama');      
      }
      else if(this.nuevoJuego.vidas <= 0)
      {

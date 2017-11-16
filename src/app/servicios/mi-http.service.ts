@@ -13,10 +13,16 @@ export class MiHttpService {
   constructor(public http:Http) { }
   
   public httpGetPromise(url: string, objeto:any){
-
-
     return this.http
     .get(url)
+    .toPromise()
+    .then(this.extraerDatos)
+    .catch(this.handleError);
+  }
+
+  public httpPostPromise(url: string, objeto:any){
+    return this.http
+    .post(url,objeto)
     .toPromise()
     .then(this.extraerDatos)
     .catch(this.handleError);

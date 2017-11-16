@@ -8,13 +8,16 @@
 	<section class=ejemplo>
 		<div class=controles>
 			<div class=boton>
-				<a id='iniciar' class=init>Iniciar</a>
+				<a id='iniciar' class=init (click)="reiniciar()">Reiniciar</a>
 			</div>
-			<div class=crono>
-				0:<span>30</span>
+			<div id="cronometro" class=crono>
+				<span >{{segundero}}</span>
 			</div>
 			<div class=boton>
-				<a id='reiniciar' class=reinit>Reiniciar</a>
+				<p *ngIf="juego.gano" class="ganar" id='reiniciar'>Ganaste!!</p>
+				<p *ngIf="juego.perdio" class="perder" id='reiniciar'>Perdiste!!</p>
+				<p *ngIf="!juego.perdio && !juego.gano" id='reiniciar'>Suerte	!!</p>
+				
 			</div>
 		</div>
 		<div class=memoria>

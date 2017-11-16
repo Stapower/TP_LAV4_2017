@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { AdivinaElNumeroComponent } from './componentes/adivina-el-numero/adivina-el-numero.component';
 import { ListadoDeResultadosComponent } from './componentes/listado-de-resultados/listado-de-resultados.component';
 import { LoginComponent } from './componentes/login/login.component';
+import { HttpModule } from '@angular/http';
+
 //  import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 // import { AccordionModule } from 'ngx-bootstrap';
@@ -70,7 +72,8 @@ import { JuegoDeMemoriaComponent } from './componentes/juego-de-memoria/juego-de
   imports: [
     BrowserModule,
     FormsModule,
-    RuteandoModule
+    RuteandoModule,
+    HttpModule
 
     // NgbModule.forRoot(MiRuteo),
     // importo el ruteo

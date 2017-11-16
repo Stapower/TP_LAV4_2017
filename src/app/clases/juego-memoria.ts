@@ -6,10 +6,13 @@ export class carta {
     seleccionada;
     ruta = "../assets/imagenes/";
     posicion;
+    fija;
 }
 
 export class JuegoMemoria extends Juego{
 
+    gano;
+    perdio;
     tiempo;
     maximoDeCartas = 20;
     coordenadasDisponibles : Array<carta>;
@@ -25,6 +28,24 @@ export class JuegoMemoria extends Juego{
     'Angular2.jpg',
     'Python.jpg'];
     
+
+
+
+    verificarVictoria()
+    {
+        var victoria=0;
+        for(var index =0 ; index < this.coordenadasDisponibles.length ; index++){
+            if(this.coordenadasDisponibles[index].mostrar)
+                victoria++;
+            }
+        if(victoria == this.coordenadasDisponibles.length)
+        {
+            this.gano=true;
+        }
+        return this.gano;
+    }
+
+
     verificar()
     {
         return this.gano;
@@ -63,7 +84,6 @@ export class JuegoMemoria extends Juego{
     dameCoordenadaVacia()
     {
       var coordenada = this.random();
-      console.log(coordenada);
       if(this.coordenadasDisponibles[coordenada].imagen != null)
           coordenada = this.dameCoordenadaVacia();
       

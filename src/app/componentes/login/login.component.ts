@@ -3,6 +3,7 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 import {Subscription} from "rxjs";
 import {TimerObservable} from "rxjs/observable/TimerObservable";
+import {JuegoServiceService} from "../../servicios/juego-service.service";
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -17,12 +18,14 @@ export class LoginComponent implements OnInit {
   progresoMensaje="esperando..."; 
   logeando=true;
   ProgresoDeAncho:string;
+  url = "https://pps-tomas.000webhostapp.com/MisJuegos/juegos.php/login";
 
   clase="progress-bar progress-bar-info progress-bar-striped ";
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router) {
+    private router: Router,
+    private ws: JuegoServiceService) {
       this.progreso=0;
       this.ProgresoDeAncho="0%";
 
@@ -32,9 +35,22 @@ export class LoginComponent implements OnInit {
   }
 
   Entrar() {
-    if (this.usuario === 'admin' && this.clave === 'admin') {
+    console.log('entro');
+    this.ws.login(this.url,{
+        username: this.usuario,
+        password: this.clave 
+      })
+    .then( data => {
+    console.info("data>>>",data);
+    this.router.navigate(['/Principal']);
+  })
+  .catch( e => {
+    console.info(e);
+  } );
+  localStorage.setItem('usuario', this.usuario);    
+    /*if (this.usuario === 'admin' && this.clave === 'admin') {
       this.router.navigate(['/Principal']);
-    }
+    }*/
   }
   MoverBarraDeProgreso() {
     
