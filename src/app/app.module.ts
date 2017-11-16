@@ -44,7 +44,9 @@ import { CabeceraComponent } from './componentes/cabecera/cabecera.component';
 import { QuienSoyComponent } from './componentes/quien-soy/quien-soy.component';
 import { AnagramaComponent } from './componentes/anagrama/anagrama.component';
 import { PiedraPapelTijeraComponent } from './componentes/piedra-papel-tijera/piedra-papel-tijera.component';
-import { JuegoDeMemoriaComponent } from './componentes/juego-de-memoria/juego-de-memoria.component'
+import { JuegoDeMemoriaComponent } from './componentes/juego-de-memoria/juego-de-memoria.component';
+import { ResaltarDirective } from './directivas/resaltar.directive';
+import { ResaltarDosDirective } from './directivas/resaltar-dos.directive'
 
 @NgModule({
   declarations: [
@@ -67,7 +69,9 @@ import { JuegoDeMemoriaComponent } from './componentes/juego-de-memoria/juego-de
     QuienSoyComponent,
     AnagramaComponent,
     PiedraPapelTijeraComponent,
-    JuegoDeMemoriaComponent
+    JuegoDeMemoriaComponent,
+    ResaltarDirective,
+    ResaltarDosDirective
   ],
   imports: [
     BrowserModule,
