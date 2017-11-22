@@ -1,8 +1,17 @@
 <html>
 	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js">
+				$(".iniciar").click(function() {
+					//$(this).addClass("turn");
+					console.log('djsaks');
+				});
+		</script>
+
 		<meta charset="utf-8" />
 		<title>Juego de Memoria</title>
 	</head>
+
+
 
 	<body>
 	<section class=ejemplo>
@@ -10,21 +19,22 @@
 			<div class=boton>
 				<a id='iniciar' class=init (click)="reiniciar()">Reiniciar</a>
 			</div>
-			<div id="cronometro" class=crono>
-				<span >{{segundero}}</span>
+			<div id="cronometro" class=boton>
+				<p >{{juego.tiempo}}</p>
 			</div>
 			<div class=boton>
 				<p *ngIf="juego.gano" class="ganar" id='reiniciar'>Ganaste!!</p>
 				<p *ngIf="juego.perdio" class="perder" id='reiniciar'>Perdiste!!</p>
-				<p *ngIf="!juego.perdio && !juego.gano" id='reiniciar'>Suerte	!!</p>
+				<p *ngIf="!juego.perdio && !juego.gano" id='reiniciar'>Suerte!!</p>
 				
 			</div>
 		</div>
 		<div class=memoria>
-      <div class="card" *ngFor = "let carta of juego.coordenadasDisponibles"  (click) = "meSelecciono(carta)">
-          <article class=unoUno> 
-            <img *ngIf="carta.mostrar" src={{carta.ruta+carta.imagen}} height="160" width="150" >  
-          </article>  
+      <div *ngFor = "let carta of juego.coordenadasDisponibles"  (click) = "meSelecciono(carta)">
+				<div class="flip">
+					<img  src= "./assets/imagenes/joker.jpg" height="160" width="150" class="flip-1">  						
+					<img  src={{carta.ruta+carta.imagen}} height="160" width="150" class="flip-2" id={{carta.posicion}}>  
+				</div>
       </div>
 		</div>
 		<div class='retro msn'>

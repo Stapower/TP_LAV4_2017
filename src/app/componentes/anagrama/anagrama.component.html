@@ -1,20 +1,21 @@
+<body>
+  <div style="text-align:center">
+    <h1>
+      {{nuevoJuego.nombre}}!
+    </h1>
+  </div>
+  <h2></h2>
+  <form name="juego">
+    <h3>Palabra a anagramar: {{nuevoJuego.palabraSecreta}}</h3>
+    <label>Ingrese la palabra:  </label>  <input [disabled]="nuevoJuego.vidas==0 || nuevoJuego.gano" [(ngModel)]="nuevoJuego.palabraIngresada" placeholder="ingrese palabra" name="palabraIngresada" type="text" class="form-control" style="width:50%"/>
+      <h3> reintentos restantes: {{nuevoJuego.vidas}}</h3>
+      <h2><button  [disabled]="nuevoJuego.vidas==0 || nuevoJuego.gano" (click)="verificar()" class="btn btn-success btn-lg">Verificar</button></h2>
+  
+      <h2><button (click)="GenerarPalabra()"  class="btn btn-info btn-lg"> Generar Nueva Palabra </button></h2>
+  
+      <h3 [hidden]="!nuevoJuego.gano">Palabra adivinada</h3>
+      <h3 [hidden]="nuevoJuego.gano"> Palabra no adivinada </h3>
+  </form>
 
-<div style="text-align:center">
-  <h1>
-    {{nuevoJuego.nombre}}!
-  </h1>
- </div>
-<h2></h2>
-<form name="juego">
-   <h3>Palabra a anagramar: {{nuevoJuego.palabraSecreta}}</h3>
-   <label>Ingrese la palabra:  </label>  <input [disabled]="nuevoJuego.vidas==0 || nuevoJuego.gano" [(ngModel)]="nuevoJuego.palabraIngresada" placeholder="ingrese palabra" name="palabraIngresada" type="text" class="form-control" style="width:50%"/>
-     <h3> reintentos restantes: {{nuevoJuego.vidas}}</h3>
-    <h2><button  [disabled]="nuevoJuego.vidas==0 || nuevoJuego.gano" (click)="verificar()" class="btn btn-success btn-lg">Verificar</button></h2>
- 
-    <h2><button (click)="GenerarPalabra()"  class="btn btn-info btn-lg"> Generar Nueva Palabra </button></h2>
- 
-    <h3 [hidden]="!nuevoJuego.gano">Palabra adivinada</h3>
-    <h3 [hidden]="nuevoJuego.gano"> Palabra no adivinada </h3>
-</form>
-
-<div id="snackbar"> {{Mensajes}}</div>
+  <div id="snackbar"> {{Mensajes}}</div>
+</body> 

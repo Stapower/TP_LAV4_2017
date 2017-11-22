@@ -8,6 +8,9 @@
     position: relative;
 }
 
+body{
+    font-family: cursive !important;
+}
 
 .hero-text {
 text-align: center;

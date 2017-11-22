@@ -35,6 +35,9 @@ export class JuegoDeMemoriaComponent implements OnInit {
     if(!this.juego.perdio)
     {
       carta.mostrar = true;   
+      document.getElementById(carta.posicion).classList.toggle('turn');
+      document.getElementById(carta.posicion).classList.add('turn');
+      console.log('gelemeent '+ document.getElementById(carta.posicion).classList);
       setTimeout(() => 
       {
         this.seQuedaAlguna(carta);
@@ -86,11 +89,11 @@ export class JuegoDeMemoriaComponent implements OnInit {
     this.juego.generarParejas();
     this.mostrarTodo(true);
 
-      setTimeout(() => 
+      /*setTimeout(() => 
       {
         this.mostrarTodo(false);
       },
-      2000);
+      2000);*/
 
     this.crono();  
   }
