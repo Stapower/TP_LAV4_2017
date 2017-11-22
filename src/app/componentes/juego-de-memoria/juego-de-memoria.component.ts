@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, AfterViewChecked} from '@angular/core';
 import { JuegoMemoria } from '../../clases/juego-Memoria';
 import {Observable} from 'rxjs/Rx';
 import {JuegoServiceService} from "../../servicios/juego-service.service";
@@ -21,11 +21,10 @@ export class JuegoDeMemoriaComponent implements OnInit {
 
   juego;
   primerCarta;
-  segundero = 60;
+  segundero = 90;
   contador;
-  Tiempo=60; 
+  Tiempo=90; 
   repetidor;
-  
 
   ngOnInit() {
   }
@@ -34,10 +33,8 @@ export class JuegoDeMemoriaComponent implements OnInit {
   {
     if(!this.juego.perdio)
     {
+      console.log(carta);
       carta.mostrar = true;   
-      document.getElementById(carta.posicion).classList.toggle('turn');
-      document.getElementById(carta.posicion).classList.add('turn');
-      console.log('gelemeent '+ document.getElementById(carta.posicion).classList);
       setTimeout(() => 
       {
         this.seQuedaAlguna(carta);
@@ -48,6 +45,7 @@ export class JuegoDeMemoriaComponent implements OnInit {
 
   seQuedaAlguna(carta: any)
   {
+    console.log('fxed'+carta.fija);
     if(!carta.fija)
     {
       if(this.primerCarta != null){
@@ -87,7 +85,7 @@ export class JuegoDeMemoriaComponent implements OnInit {
     this.juego = new JuegoMemoria();
     this.juego.limpiarEspacio();
     this.juego.generarParejas();
-    this.mostrarTodo(true);
+    this.mostrarTodo(false);
 
       /*setTimeout(() => 
       {

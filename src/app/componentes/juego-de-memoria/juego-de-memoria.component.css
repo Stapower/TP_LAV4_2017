@@ -67,8 +67,10 @@
         vertical-align:top;
         width:20%;
         }
-
-        .turn{
+        .hide {
+            display: none !important;
+        }
+        .flip:hover{
         transform: perspective(600px) rotateY(-180deg) translateX(225%);
         }
 
