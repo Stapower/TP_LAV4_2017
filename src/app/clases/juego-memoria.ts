@@ -4,7 +4,7 @@ export class carta {
     imagen;
     mostrar;
     seleccionada;
-    ruta = "./assets/imagenes/";
+    ruta = "/assets/imagenes/";
     posicion;
     fija;
 }
