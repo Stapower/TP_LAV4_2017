@@ -13,10 +13,16 @@ import 'rxjs/add/operator/toPromise';
 export class JuegoServiceService {
 
   constructor(public http: Http) { }
+  url = "https://pps-tomas.000webhostapp.com/MisJuegos/juegos.php/";
+  public listar(): Promise<any> {
+    
+    return this.http
+    .get(this.url + "GetScores")
+    .toPromise()
+    .then(this.extraerDatos)
+    .catch(this.handleError);
 
-  public listar(): Array<Juego> {
-
-    let miArray: Array<Juego> = new Array<Juego>();
+    /*let miArray: Array<Juego> = new Array<Juego>();
 
     miArray.push(new JuegoAdivina("Juego 1", false));
     miArray.push(new JuegoAdivina("Pepe", true));
@@ -24,7 +30,7 @@ export class JuegoServiceService {
     miArray.push(new JuegoAdivina("Juego 4", false));
     miArray.push(new JuegoAdivina("Juego 5", false));
     miArray.push(new JuegoAdivina("Juego 6", false));
-    return miArray;
+    return miArray;*/
   }
 
   public listarPromesa(): Promise<Array<Juego>> {
