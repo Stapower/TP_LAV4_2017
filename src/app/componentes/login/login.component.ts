@@ -12,8 +12,8 @@ import {JuegoServiceService} from "../../servicios/juego-service.service";
 export class LoginComponent implements OnInit {
 
   private subscription: Subscription;
-  usuario = '';
-  clave= '';
+  usuario = 'Pepito';
+  clave= '123456';
   progreso: number;
   progresoMensaje="esperando..."; 
   logeando=true;
@@ -56,7 +56,7 @@ export class LoginComponent implements OnInit {
     
     this.logeando=false;
     this.clase="progress-bar progress-bar-danger progress-bar-striped active";
-    this.progresoMensaje="NSA spy..."; 
+    this.progresoMensaje="Iniciando Sesion..."; 
     let timer = TimerObservable.create(200, 50);
     this.subscription = timer.subscribe(t => {
       console.log("inicio");
@@ -65,26 +65,14 @@ export class LoginComponent implements OnInit {
       switch (this.progreso) {
         case 15:
         this.clase="progress-bar progress-bar-warning progress-bar-striped active";
-        this.progresoMensaje="Verificando ADN..."; 
+        this.progresoMensaje="Verificando..."; 
           break;
         case 30:
           this.clase="progress-bar progress-bar-Info progress-bar-striped active";
           this.progresoMensaje="Adjustando encriptación.."; 
-          break;
-          case 60:
-          this.clase="progress-bar progress-bar-success progress-bar-striped active";
-          this.progresoMensaje="Recompilando Info del dispositivo..";
-          break;
-          case 75:
-          this.clase="progress-bar progress-bar-success progress-bar-striped active";
-          this.progresoMensaje="Recompilando claves facebook, gmail, chats..";
-          break;
-          case 85:
-          this.clase="progress-bar progress-bar-success progress-bar-striped active";
-          this.progresoMensaje="Instalando KeyLogger..";
-          break;
-          
+          break;        
         case 100:
+        this.progresoMensaje="Listo!";
           console.log("final");
           this.subscription.unsubscribe();
           this.Entrar();
