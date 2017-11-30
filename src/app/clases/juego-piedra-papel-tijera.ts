@@ -54,11 +54,11 @@ export class JuegoPiedraPapelTijera extends Juego{
         {
     //gana
         this.mensaje = "<h2>¡Has ganado!<br /><img src='http://i62.tinypic.com/1ze8uau.png'/></h2>";
+        this.gano = true;
         }
     //pierde
         else
         this.mensaje = "<h2>¡Has perdido!<br /><img src='http://i57.tinypic.com/6r3dcg.png'/></h2>" + "<img src='https://the-big-bang-theory.com/images/uploads/4/th_574e7c36606306d94a4.jpg'/>"; 
-
         return this.mensaje;            
     }
 }
