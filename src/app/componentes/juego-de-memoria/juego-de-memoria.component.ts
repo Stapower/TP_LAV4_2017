@@ -21,9 +21,9 @@ export class JuegoDeMemoriaComponent implements OnInit {
 
   juego;
   primerCarta;
-  segundero = 90;
+  segundero =110;
   contador;
-  Tiempo=90; 
+  Tiempo=110; 
   repetidor;
 
   ngOnInit() {
@@ -113,7 +113,7 @@ export class JuegoDeMemoriaComponent implements OnInit {
       if(this.Tiempo==0 ) {
         clearInterval(this.repetidor);
         this.juego.perdio=true;
-        this.Tiempo=60;
+        this.Tiempo=110;
       }
       }, 900);
 

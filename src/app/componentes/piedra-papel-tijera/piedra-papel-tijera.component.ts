@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { JuegoPiedraPapelTijera } from '../../clases/Juego-piedra-papel-tijera'
+import {Observable} from 'rxjs/Rx';
+import {JuegoServiceService} from "../../servicios/juego-service.service";
 
 @Component({
   selector: 'app-piedra-papel-tijera',
@@ -8,7 +10,7 @@ import { JuegoPiedraPapelTijera } from '../../clases/Juego-piedra-papel-tijera'
 })
 export class PiedraPapelTijeraComponent implements OnInit {
 nuevoJuego;
-  constructor() { 
+  constructor( public jws:JuegoServiceService) { 
     this.nuevoJuego = new JuegoPiedraPapelTijera();
   }
 
@@ -27,8 +29,11 @@ instrucciones(){
 }
 
 jugar(opcionUsuario){
-
+  this.nuevoJuego.gano = false;
   this.nuevoJuego.calcular(opcionUsuario);
+  if(this.nuevoJuego.gano)
+    this.jws.guardar(10, 'PPTLS');  
+
  	document.getElementById('juego').style.display = "none";		
   document.getElementById('resultado').style.display = "block";
   document.getElementById('inicial').style.display='none';

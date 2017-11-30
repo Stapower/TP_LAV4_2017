@@ -18,13 +18,16 @@ export class ListadoComponent implements OnInit {
 
   llamaService(){
     console.log("llamaService");
-    this.listadoParaCompartir= this.miServicioJuego.listar();
+    this.miServicioJuego.listar().then((listado) => {
+      this.listadoParaCompartir = listado;
+    });    
   }
 
   llamaServicePromesa(){
     console.log("llamaServicePromesa");
     this.miServicioJuego.listarPromesa().then((listado) => {
         this.listadoParaCompartir = listado;
-    });
+   });
   }
+    
 }
