@@ -28,7 +28,7 @@
 		<div class=memoria>
       <div *ngFor = "let carta of juego.coordenadasDisponibles"  (click) = "meSelecciono(carta)">
 				<div class="flip" *ngIf="!carta.fija">
-					<img  src= "./assets/imagenes/joker.jpg" height="160" width="150" [ngClass]="{'flip-1' : !carta.mostrar, 'hide' : carta.mostrar}">  						
+					<img  src= "/assets/imagenes/joker.jpg" height="160" width="150" [ngClass]="{'flip-1' : !carta.mostrar, 'hide' : carta.mostrar}">  						
 					<img  src={{carta.ruta+carta.imagen}} height="160" width="150" [ngClass]="{'flip-2' : !carta.mostrar}" id={{carta.posicion}}>  
 				</div>
       </div>
