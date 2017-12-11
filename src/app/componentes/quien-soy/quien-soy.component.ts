@@ -12,13 +12,6 @@ export class QuienSoyComponent implements OnInit {
   constructor(private route: ActivatedRoute,
     private router: Router) { }
   ngOnInit() {
-    try{
-      $('#header').addClass('fadeInRight');      
-    }
-    catch(ex){
-      console.log('ex'+ex);
-    }
-    
     console.log('rollIn');
   }
 
