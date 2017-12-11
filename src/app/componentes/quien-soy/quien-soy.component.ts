@@ -17,7 +17,9 @@ export class QuienSoyComponent implements OnInit {
 
   Juego(tipo : string){
     if(tipo == "JuegoDeMemoria")
-     this.router.navigate(['/Juegos/JuegoDeMemoria']);
+      this.router.navigate(['/Juegos/JuegoDeMemoria']);
+     else if(tipo=="Principal")
+      this.router.navigate(['/Principal']);
   }
 
 }
