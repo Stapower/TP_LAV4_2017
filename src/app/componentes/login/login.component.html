@@ -21,7 +21,7 @@
     </div>
   </div>
 </div-->
- <div class="container" >
+ <!--div class="container" >
   <div class="jumbotron" style="padding:50px;">
     <form action="Entrar()">
       <div class="imgcontainer">
@@ -54,4 +54,40 @@
      
     </form>
   </div>
-</div>
+</div-->
+
+<!--body>
+    <body class="align">
+    <div class="grid">
+        <form action="Entrar()" method="post" class="form login">
+        <header class="login__header">
+          <h3 class="login__title">Login</h3>
+        </header>
+        <div class="login__body">
+          <div class="form__field">
+            <input type="email" placeholder="Email" [(ngModel)]="usuario">
+          </div>
+          <div class="form__field">
+            <input type="password" placeholder="Password" [(ngModel)]="clave">
+          </div>
+        </div>
+        <footer class="login__footer">
+          <input type="submit" value="Login">
+        </footer>
+      </form>
+    </div>
+  </body-->
+
+  <form class="login-form">
+      <p class="login-text">
+        <span class="fa-stack fa-lg">
+          <i class="fa fa-circle fa-stack-2x"></i>
+          <i class="fa fa-lock fa-stack-1x"></i>
+        </span>
+      </p>
+      <input type="email" class="login-username" autofocus="true" required="true" placeholder="Email" [(ngModel)]="usuario" name="usuario"/>
+      <input type="password" class="login-password" required="true" placeholder="Password" [(ngModel)]="clave" name="clave"/>
+      <input type="submit" name="Login" value="Login" (click)="Entrar()" class="login-submit" />
+    </form>
+    <div class="underlay-photo"></div>
+    <div class="underlay-black"></div> 

@@ -1,15 +1,55 @@
 <html>
 	<head>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js">
-		</script>
-
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
 		<meta charset="utf-8" />
 		<title>Juego de Memoria</title>
 	</head>
 
-
-
 	<body>
+		<!--button (click)="myFunc()" class="position:fixed"> boton </button-->
+
+
+			<!--div id="card" (click)="myfunc()"> 
+				<div class="front"> 
+					<img  src= "./assets/imagenes/joker.jpg" height="160" width="150">  						
+				</div>
+
+				<div class="back">
+					<img  src="./assets/imagenes/Python.jpg" height="160" width="150">
+				</div> 
+			</div>
+
+		<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+			<div class="flipper">
+				<div class="front">
+					<img  src= "./assets/imagenes/joker.jpg" height="160" width="150">  						
+				</div>
+				<div class="back">
+					<img  src="./assets/imagenes/Python.jpg" height="160" width="150">
+				</div>
+			</div>
+		</div-->
+
+		<!--div class=memoria>
+			<div *ngFor = "let carta of juego.coordenadasDisponibles"  (click) = "meSelecciono(carta)">
+				<div class="flip-container">
+						<div class="flipper" *ngIf="!carta.fija" id=div{{carta.posicion}}>
+							<div class="front">
+								<img  src= "./assets/imagenes/joker.jpg" height="160" width="150">  																
+							</div>
+							<div class="back">
+								<img  src={{carta.ruta+carta.imagen}} height="160" width="150">  										
+							</div>
+						</div>
+				</div>
+			</div>
+		</div-->
+
+	<section class=ejemplo>				
+
+	</section>
+
 	<section class=ejemplo>
 		<div class=controles>
 			<div class=boton>
@@ -21,18 +61,33 @@
 			<div class=boton>
 				<p *ngIf="juego.gano" class="ganar" id='reiniciar'>Ganaste!!</p>
 				<p *ngIf="juego.perdio" class="perder" id='reiniciar'>Perdiste!!</p>
-				<p *ngIf="!juego.perdio && !juego.gano" id='reiniciar'>Suerte!!</p>
-				
+				<p *ngIf="!juego.perdio && !juego.gano" id='reiniciar'>Suerte!!</p>				
 			</div>
 		</div>
-		<div class=memoria>
-      <div *ngFor = "let carta of juego.coordenadasDisponibles"  (click) = "meSelecciono(carta)">
-				<div class="flip" *ngIf="!carta.fija">
-					<img  src= "./assets/imagenes/joker.jpg" height="160" width="150" [ngClass]="{'flip-1' : !carta.mostrar, 'hide' : carta.mostrar}">  						
-					<img  src={{carta.ruta+carta.imagen}} height="160" width="150" [ngClass]="{'flip-2' : !carta.mostrar}" id={{carta.posicion}}>  
+
+		<div class="flip-container"  *ngFor = "let carta of juego.coordenadasDisponibles" >
+			<label>
+				<input type="checkbox" id=checkbox{{carta.posicion}}  (click) = "meSelecciono(carta)"/>
+				<div class="card" *ngIf="!carta.fija">
+					<div class="front">
+						<img  src= "./assets/imagenes/joker.jpg" height="160" width="150">  						
+					</div>
+					<div class="back">	
+						<img src={{carta.ruta+carta.imagen}} height="160" width="150">
+					</div>
 				</div>
-      </div>
+			</label>
 		</div>
+
+
+		<!--div class=memoria>
+			<div *ngFor = "let carta of juego.coordenadasDisponibles"  (click) = "meSelecciono(carta)">
+					<div class="flip" *ngIf="!carta.fija" id=div{{carta.posicion}}>
+						<img  src= "./assets/imagenes/joker.jpg" height="160" width="150" [ngClass]="{'flip-1' : !carta.mostrar, 'hide' : carta.mostrar}">
+						<img  src={{carta.ruta+carta.imagen}} height="160" width="150" [ngClass]="{'flip-2' : !carta.mostrar}" id={{carta.posicion}}>
+					</div>
+			</div>
+		</div-->
 		<div class='retro msn'>
 			<p>
 			</p>

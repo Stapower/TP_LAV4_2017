@@ -1,73 +1,66 @@
 <body>
-  <div class="container" >
-    <div class="card">
-      <img class="img-thumbnail"   src="./assets/imagenes/cerebro.jpg" alt="Avatar" style="width:100%">
+  <!--div class="container">
+    <div>
+      <img class="img-thumbnail" src="./assets/imagenes/cerebro.jpg" alt="Avatar" style="width:100%" (click)="Juego('Agilidad')"/>
       <h1>Agilidad aritmética </h1>
-      <p class="title">Juego de agilidad mental</p>
-      <p>UTN FRA </p>
-  
-      <a href="https://github.com/stapower"><i class="fa fa-dribbble"></i></a> 
-      <!--a href="#"><i class="fa fa-twitter"></i></a--> 
-      <a href="https://www.linkedin.com/in/sebastian-tomas-arga%C3%B1aras-3b883411a/"><i class="fa fa-linkedin"></i></a> 
-      <a href="https://github.com/stapower"target="_blank">en GitHub <i class="fa fa-github"></i></a>      
-      <!--a href="#"><i class="fa fa-facebook"></i></a--> 
-      <p>           <button class="button"  (click)="Juego('Agilidad')">Jugar</button></p>
-    
     </div>
   
-    <div class="card">
-      <img class="img-thumbnail" src="./assets/imagenes/piedra-papel-tijera-lagarto-spock1.png" alt="Avatar" style="width:100%">
-      <h1>Piedra Papel, Tijera o...</h1>
-      <p class="title">Juega contra la máquina</p>
-      <p>UTN FRA </p>
-      
-      <a href="https://github.com/stapower"><i class="fa fa-dribbble"></i></a> 
-      <!--a href="#"><i class="fa fa-twitter"></i></a--> 
-      <a href="https://www.linkedin.com/in/sebastian-tomas-arga%C3%B1aras-3b883411a/"><i class="fa fa-linkedin"></i></a> 
-      <a href="https://github.com/stapower"target="_blank">en GitHub <i class="fa fa-github"></i></a>      
-      <!--a href="#"><i class="fa fa-facebook"></i></a--> 
-      <p>           <button class="button"  (click)="Juego('PPTLS')">Jugar</button></p>
+    <div>
+      <img class="img-thumbnail" src="./assets/imagenes/piedra-papel-tijera-lagarto-spock1.png" alt="Avatar" style="width:100%" (click)="Juego('PPTLS')">
+      <h1>Piedra Papel, Tijera o...</h1> 
     </div>
-    <div class="card">
-      <img  class="img-thumbnail"  src="./assets/imagenes/adivina.png" alt="Avatar" style="width:100%">
+
+    <div>
+      <img  class="img-thumbnail"  src="./assets/imagenes/adivina.png" alt="Avatar" style="width:100%" (click)="Juego('Adivina')">
       <h1>Adivina el número secreto</h1>
-      <p class="title">Juega de estrategia</p>
-      <p>UTN FRA </p>
-      
-      <a href="https://github.com/stapower"><i class="fa fa-dribbble"></i></a> 
-      <!--a href="#"><i class="fa fa-twitter"></i></a--> 
-      <a href="https://www.linkedin.com/in/sebastian-tomas-arga%C3%B1aras-3b883411a/"><i class="fa fa-linkedin"></i></a> 
-      <a href="https://github.com/stapower"target="_blank">en GitHub <i class="fa fa-github"></i></a>      
-      <!--a href="#"><i class="fa fa-facebook"></i></a--> 
-      <p>           <button class="button"  (click)="Juego('Adivina')">Jugar</button></p>
     </div>
 
-    <div class="card">
-      <img  class="img-thumbnail"  src="./assets/imagenes/Anagrama.jpg" alt="Avatar" style="width:100%">
+    <div>
+      <img  class="img-thumbnail"  src="./assets/imagenes/Anagrama.jpg" alt="Avatar" style="width:100%" (click)="Juego('Anagrama')">
       <h1>Ordená la Palabra</h1>
-      <p class="title">Juega de estrategia</p>
-      <p>UTN FRA </p>
-      
-      <a href="https://github.com/stapower"><i class="fa fa-dribbble"></i></a> 
-      <!--a href="#"><i class="fa fa-twitter"></i></a--> 
-      <a href="https://www.linkedin.com/in/sebastian-tomas-arga%C3%B1aras-3b883411a/"><i class="fa fa-linkedin"></i></a> 
-      <a href="https://github.com/stapower"target="_blank">en GitHub <i class="fa fa-github"></i></a>      
-      <!--a href="#"><i class="fa fa-facebook"></i></a--> 
-      <p><button class="button"  (click)="Juego('Anagrama')">Jugar</button></p>
     </div>
 
-    <div class="card">
-      <img  class="img-thumbnail"  src="./assets/imagenes/JuegoDeMemoria.jpg" alt="Avatar" style="width:100%">
-      <h1>Memoria</h1>
-      <p class="title">Juega de memoria</p>
-      <p>UTN FRA</p>
-      
-      <a href="https://github.com/stapower"><i class="fa fa-dribbble"></i></a> 
-      <!--a href="#"><i class="fa fa-twitter"></i></a--> 
-      <a href="https://www.linkedin.com/in/sebastian-tomas-arga%C3%B1aras-3b883411a/"><i class="fa fa-linkedin"></i></a> 
-      <a href="https://github.com/stapower"target="_blank">en GitHub <i class="fa fa-github"></i></a>      
-      <!--a href="#"><i class="fa fa-facebook"></i></a--> 
-      <p><button class="button"  (click)="Juego('JuegoDeMemoria')">Jugar</button></p>
+    <div>
+      <img  class="img-thumbnail"  src="./assets/imagenes/JuegoDeMemoria.jpg" alt="Avatar" style="width:100%" (click)="Juego('JuegoDeMemoria')">
+      <h1>Juego de Memoria</h1>
     </div>
+  </div-->
+
+  <div class="container" (click)="Juego('Agilidad')"> 
+      <img  src="./assets/imagenes/cerebro.jpg" alt="Avatar" class="img-thumbnail" style="width:100%">
+      <div class="middle">
+        <div class="text">Agilidad Aritmetica</div>
+        </div>
+    </div>
+
+  <div class="container" (click)="Juego('PPTLS')">
+      <img src="./assets/imagenes/piedra-papel-tijera-lagarto-spock1.png" alt="Avatar" class="img-thumbnail" style="width:100%">
+      <div class="middle">
+        <div class="text">Piedra Papel Tijera Lagarto Spock</div>
+        </div>
+    </div>
+
+  <div class="container"  (click)="Juego('Adivina')">
+      <img src="./assets/imagenes/adivina.png" alt="Avatar" class="img-thumbnail" style="width:100%">
+      <div class="middle">
+        <div class="text">Adivina</div>
+        </div>
+    </div>
+
+  <div class="container" (click)="Juego('Anagrama')">
+      <img src="./assets/imagenes/Anagrama.jpg" alt="Avatar" class="img-thumbnail" style="width:100%">
+      <div class="middle">
+        <div class="text">Anagrama</div>
+        </div>
+    </div>
+      
+  <div class="container"  (click)="Juego('JuegoDeMemoria')">
+    <img src="./assets/imagenes/JuegoDeMemoria.jpg" alt="Avatar" class="img-thumbnail" style="width:100%">
+    <div class="middle">
+      <div class="text">Juego de Memoria</div>
+      </div>
   </div>
+
 </body>
+
+

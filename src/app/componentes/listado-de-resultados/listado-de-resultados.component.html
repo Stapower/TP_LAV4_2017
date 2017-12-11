@@ -5,9 +5,9 @@
 
 </div-->
 
-<table class="table table-condensed">
-    <thead>
-      <tr>
+<table class="table table-bordered table-responsive">
+  <thead class="thead-inverse">
+    <tr class="active"> 
         <th>Juego</th>
         <th>Jugador</th>
         <th>Puntos</th>
@@ -15,9 +15,9 @@
     </thead>
     <tbody>
       <tr *ngFor="let juego of listado">
-        <td>{{juego.juego}} </td>
-        <td>{{juego.usuario}} </td> 
-        <td>{{juego.puntos}} </td>    
+        <td>{{juego.juego}}</td>
+        <td >{{juego.usuario}}</td > 
+        <td>{{juego.puntos}}</td>    
       </tr>
      
     </tbody>

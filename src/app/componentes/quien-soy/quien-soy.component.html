@@ -1,25 +1,26 @@
-  <nav class="navbar navbar-default">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>                        
-        </button>
-        <a class="navbar-brand" href="/Principal">Sala De Juegos</a>
+<head>
+  <link rel="stylesheet" 
+  href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css"
+  integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw"
+  crossorigin="anonymous">
+  <!-- or -->
+  <!--link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"
+  integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw"
+  crossorigin="anonymous"-->
+</head>
+  <div id="header">    
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/Principal">Atras</a>
+        </div>
       </div>
-      <div class="collapse navbar-collapse" id="myNavbar">
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="/QuienSoy#quien">Quien</a></li>
-          <li><a href="/QuienSoy#que">Ques es</a></li>
-          <li><a href="/QuienSoy#donde">Donde</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+    </nav>
+  </div>
   
   <!-- First Container -->
-  <div id ="quiwn"class="container-fluid bg-1 text-center">
+  <div id ="quiwn"class="container-fluid bg-1 text-center fadeInDown">
     <h3 class="margin">Quién Soy?</h3>
     <img src="/assets/imagenes/quiensoy.jpg" class="img-responsive img-circle margin" style="display:inline" alt="Bird" width="350" height="350">
     <h3>Soy Un alumno de la UTN FRA</h3>
@@ -28,14 +29,11 @@
   <!-- Second Container -->
   <div id ="que" class="container-fluid bg-2 text-center">
     <h3 class="margin">Esto es un trabajo práctico</h3>
-    <p>Cada universidad, cada facultad, cada carrera y obviamente cada materia en particular tiene estrategias didácticas y formas de evaluación diferentes. A pesar de que en muchos casos las universidades intentan estandarizar la forma de dictar clase para generar un orden en las planificaciones cuatrimestre a cuatrimestre, las formas de evaluación son elementales tanto para las instituciones y profesores como para los alumnos. A través de la evaluación formativa el educador busca información en el alumno para lograr comprender cómo se está
-      produciendo el proceso de aprendizaje y poder reajustar los objetivos pedagógicos. Y para el alumno es una muestra del progreso que está logrando y si puede aplicar, materializar y darle visibilidad a la comprensión del tema. Según Black y William (1998), la evaluación formativa, ayuda a que los estudiantes sean independientes a la hora del aprendizaje, es decir, se presenta como receptor, autorregulador y centro de esa misma evaluación. </p>
-    <a href="#" class="btn btn-default btn-lg">
-      <span class="glyphicon glyphicon-file"></span> Descargar PDF
-    </a>
+    <p>En éste TP se realizó un juego de Memoria.</p>
+    <img src="./assets/imagenes/JuegoDeMemoria.jpg" (click)="Juego('JuegoDeMemoria')">
   </div>
   
-  <!-- Third Container (Grid) -->
+  <!-- Third Container (Grid) >
   <div id ="donde" class="container-fluid bg-3 text-center">    
     <h3 class="margin">Dónde Funciona?</h3><br>
     <div class="row">
@@ -52,4 +50,4 @@
         <img src="/assets/imagenes/quiensoy3.png" class="img-responsive margin imagenDeQuienSoy" alt="Image">
       </div>
     </div>
-  </div>
+  </div-->

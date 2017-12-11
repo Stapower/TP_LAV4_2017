@@ -1,14 +1,16 @@
-import { Component, OnInit, Input, AfterViewChecked} from '@angular/core';
+import { Component, OnInit, Input, AfterViewChecked, style} from '@angular/core';
 import { JuegoMemoria } from '../../clases/juego-Memoria';
 import {Observable} from 'rxjs/Rx';
 import {JuegoServiceService} from "../../servicios/juego-service.service";
-
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-juego-de-memoria',
   templateUrl: './juego-de-memoria.component.html',
-  styleUrls: ['./juego-de-memoria.component.css']
+  styleUrls: ['./juego-de-memoria.component.css'],
+  
 })
+
 export class JuegoDeMemoriaComponent implements OnInit {
 
   constructor( public jws:JuegoServiceService) {
@@ -29,17 +31,27 @@ export class JuegoDeMemoriaComponent implements OnInit {
   ngOnInit() {
   }
 
+  myfunc()
+  {
+   // $('#checkbox0').prop('checked') == true ? $('#checkbox0').prop('checked', false) : $('#checkbox0').prop('checked', true);   
+    //$('#checkbox0').prop('checked', true);  
+    //document.getElementById('checkbox0').nodeValue='true';
+   // document.querySelector("#myCard").classList.toggle("flip");
+  }
+
   meSelecciono(carta : any)
   {
     if(!this.juego.perdio)
     {
+      //$('#'+'div'+carta.posicion).toggleClass('flipHover');            
+      $('#checkbox'+carta.posicion).prop('checked', true)
       console.log(carta);
       carta.mostrar = true;   
       setTimeout(() => 
       {
         this.seQuedaAlguna(carta);
       },
-      300); 
+      700); 
     }
   }
 
@@ -65,6 +77,11 @@ export class JuegoDeMemoriaComponent implements OnInit {
           }
           else{
             this.juego.ocultar(this.primerCarta,carta);
+            console.log('ocultar.'+ ' primerCarta '+this.primerCarta +' carta '+ carta);
+            $('#checkbox'+carta.posicion).prop('checked', false);
+            $('#checkbox'+this.primerCarta.posicion).prop('checked', false)            
+            
+            
             this.primerCarta = null;
           }
           this.primerCarta = null;      
@@ -82,32 +99,45 @@ export class JuegoDeMemoriaComponent implements OnInit {
 
   reiniciar()
   {
+    clearInterval(this.repetidor);    
     this.juego = new JuegoMemoria();
     this.juego.limpiarEspacio();
     this.juego.generarParejas();
-    this.mostrarTodo(false);
+    this.mostrarTodo(true);
 
-      /*setTimeout(() => 
-      {
-        this.mostrarTodo(false);
-      },
-      2000);*/
+    setTimeout(() => 
+    {
+      console.log('mostrartodoTRUE');
+      this.mostrarTodo(true);
+
+    },
+    100); 
+
+    setTimeout(() => 
+    {
+      console.log('mostrartodoFALSE');
+      this.mostrarTodo(false);
+    },
+    2000); 
 
     this.crono();  
+    
   }
 
   mostrarTodo(boleano : boolean){
     for(var index =0 ; index < this.juego.coordenadasDisponibles.length ; index++){
       this.juego.coordenadasDisponibles[index].mostrar=boleano;
-    }
+
+        $('#checkbox'+index).prop('checked', boleano);
+      }
   }
   
   crono(){
     var segundero = this.segundero;
-    var jue = this.juego;  
-    var l = document.getElementById("cronometro");
+    //var jue = this.juego;  
+    //var l = document.getElementById("cronometro");
     
-
+    this.Tiempo=110;
     this.repetidor = setInterval(()=>{ 
       this.Tiempo--;
       if(this.Tiempo==0 ) {
