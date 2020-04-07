@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { JuegoPiedraPapelTijera } from '../../clases/Juego-piedra-papel-tijera'
+
+import { JuegoPiedraPapelTijera } from './../../clases/juego-piedra-papel-tijera';
+//import { JuegoPiedraPapelTijera } from './clases/juego-piedra-papel-tijera'
+
+//import { JuegoPiedraPapelTijera } from '../../clases/Juego-piedra-papel-tijera'
 import {Observable} from 'rxjs/Rx';
 import {JuegoServiceService} from "../../servicios/juego-service.service";
 

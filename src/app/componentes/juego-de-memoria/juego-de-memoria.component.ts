@@ -1,5 +1,7 @@
 import { Component, OnInit, Input, AfterViewChecked, style} from '@angular/core';
-import { JuegoMemoria } from '../../clases/juego-Memoria';
+import { JuegoMemoria } from './../../clases/juego-Memoria';
+
+//import { JuegoMemoria } from '../../clases/juego-Memoria';
 import {Observable} from 'rxjs/Rx';
 import {JuegoServiceService} from "../../servicios/juego-service.service";
 import * as $ from 'jquery';
