@@ -21,6 +21,9 @@ import { AdivinaMasListadoComponent } from './componentes/adivina-mas-listado/ad
 import { AgilidadMasListadoComponent } from './componentes/agilidad-mas-listado/agilidad-mas-listado.component';
 import { RuteandoModule } from './ruteando/ruteando.module';
 import { ListadoComponent } from './componentes/listado/listado.component';
+import { JuegoMemoria } from './clases/juego-Memoria';
+import { JuegoPiedraPapelTijera } from './clases/juego-piedra-papel-tijera';
+
 // declaro donde quiero que se dirija
 /*
 const MiRuteo = [{path: 'error' , component: ErrorComponent},

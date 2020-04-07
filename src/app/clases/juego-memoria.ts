@@ -1,4 +1,4 @@
-import { Juego } from '../clases/juego'
+import { Juego } from './juego'
 
 export class carta {
     imagen;
